@@ -1,2 +1,8 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+.movie-dialog .mat-mdc-dialog-surface {
+  background-color: #18181b;
+  color: white;
+  border-radius: 24px;
+}
