@@ -1,0 +1,36 @@
+<div class="flex gap-4 p-4 rounded-xl shadow-md border border-gray-200">
+  <img
+    [src]="getPosterUrl(movieOrProgram().poster_path)"
+    [alt]="movieOrProgram().title || movieOrProgram().name"
+    class="w-24 h-36 rounded-lg object-cover"
+  />
+
+  <div class="flex flex-1 justify-between">
+    <div class="flex flex-col justify-between">
+      <div>
+        <h2 class="font-bold text-xl">
+          {{ movieOrProgram().title || movieOrProgram().name }}
+        </h2>
+
+        <p class="text-sm text-gray-500">
+          {{ movieOrProgram().media_type === 'movie' ? '🎬 Movie' : '📺 TV Show' }}
+        </p>
+        <span>
+          {{ movieOrProgram().release_date || movieOrProgram().first_air_date | date: 'yyyy' }} ·
+        </span>
+      </div>
+
+      <div class="flex items-center text-sm font-medium">
+        ⭐ {{ movieOrProgram().vote_average | number: '1.1-1' }} ({{ movieOrProgram().vote_count }})
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors"
+      (click)="openMovieDetails()"
+    >
+      <i class="fa-solid fa-circle-info text-xl"></i>
+    </button>
+  </div>
+</div>

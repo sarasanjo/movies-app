@@ -1,0 +1,17 @@
+<div class="flex gap-6 p-10 rounded-2xl shadow-lg">
+  <img [src]="getPosterUrl(movieOrProgram.poster_path)" class="w-40 rounded-xl object-cover" />
+
+  <div>
+    <h2 class="text-3xl font-bold">
+      {{ movieOrProgram.title || movieOrProgram.name }}
+    </h2>
+
+    <div class="mt-2 text-gray-500">
+      {{ movieOrProgram.release_date || movieOrProgram.first_air_date }}
+    </div>
+
+    <div class="mt-4 text-gray-700">
+      {{ movieOrProgram.overview }}
+    </div>
+  </div>
+</div>

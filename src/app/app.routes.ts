@@ -7,6 +7,6 @@ export const routes: Routes = [
   // },
   {
     path: '',
-    loadComponent: () => import('./pages/trending/trending.page').then((m) => m.Trending),
+    loadComponent: () => import('./pages/trending/trending.page').then((m) => m.TrendingPage),
   }
 ];
