@@ -1,0 +1,43 @@
+<div class="filter-container">
+  <mat-button-toggle-group
+    [value]="selectedCategory()"
+    (change)="changeCategory($event.value)"
+    hideSingleSelectionIndicator
+  >
+    @for (category of categories(); track category.value) {
+      <mat-button-toggle [value]="category.value">
+        {{ category.label }}
+      </mat-button-toggle>
+    }
+  </mat-button-toggle-group>
+</div>
+
+@if (loading$ | async) {
+  <div class="loader"></div>
+} @else {
+  @if (mediaList$ | async; as mediaList) {
+    <div class="movies-grid">
+      @for (media of mediaList.results; track media.id) {
+        <div class="movie-card">
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + media.poster_path"
+            [alt]="getTitle(media)"
+          />
+
+          <p class="font-bold text-l">
+            {{ getTitle(media) }}
+          </p>
+        </div>
+      }
+    </div>
+
+    <mat-paginator
+      [length]="mediaList.total_results"
+      [pageSize]="20"
+      [pageIndex]="currentPage - 1"
+      [hidePageSize]="true"
+      (page)="onPageChange($event)"
+    >
+    </mat-paginator>
+  }
+}

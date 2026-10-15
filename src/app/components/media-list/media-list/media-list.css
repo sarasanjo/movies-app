@@ -1,0 +1,92 @@
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  padding: 24px;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.movie-card p {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #e5e7eb;
+  border-top: 5px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.filter-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 24px;
+  margin: 16px 0;
+}
+
+mat-button-toggle-group {
+  border: none;
+  gap: 12px;
+}
+
+mat-button-toggle {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 24px;
+  margin: 16px 0;
+}
+
+:host ::ng-deep .mat-button-toggle-group {
+  border: none;
+  gap: 12px;
+}
+
+:host ::ng-deep .mat-button-toggle {
+  border: 2px solid #3b82f6;
+  border-radius: 24px;
+  background: transparent;
+  color: #3b82f6;
+  margin-left: 8px;
+}
+
+:host ::ng-deep .mat-button-toggle-checked {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+:host ::ng-deep .mat-button-toggle-checked .mat-button-toggle-label-content {
+  color: white !important;
+}

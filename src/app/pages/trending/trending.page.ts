@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { TrendingService } from '../../services/trending';
+import { TrendingService } from '../../services/trending.service';
 import { Result } from '../../interfaces/trending.model';
 import { TrendingCardComponent } from '../../components/trending-card/trending-card.component';
 import { TrendingModalComponent } from '../../components/modal/trending-modal.component';
