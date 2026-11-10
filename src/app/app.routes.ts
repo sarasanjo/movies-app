@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { TvSeriesPage } from './pages/tv-series/tv-series.page';
 
 export const routes: Routes = [
-
   // {
   //   path: '',
   //   loadComponent: () => import('./pages/home/home.page').then((m) => m.Home),
@@ -19,6 +18,5 @@ export const routes: Routes = [
     path: 'tv-series',
     loadComponent: () => import('./pages/tv-series/tv-series.page').then((m) => m.TvSeriesPage),
   },
-  // { path: '', redirectTo: 'trending', pathMatch: 'full' }
-
+  { path: '', redirectTo: 'trending', pathMatch: 'full' },
 ];
